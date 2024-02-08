@@ -415,4 +415,4 @@ async def humano(ctx):
       f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
       f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
-bot.run("MTEzMDE1OTEwMTIyMjA2MDExMg.Ge6ctj.v9fpkYIp4Ctn59N1R_mehh5DnBQ6ivFjcxr9BY")
+bot.run("MTEzMDE1OTEwMTIyMjA2MDExMg.GsovzO.oyFLnf0egvdhG8ySddCIaSFGZBFjIUJt3e3h2o")

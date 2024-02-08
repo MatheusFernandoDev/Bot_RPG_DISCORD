@@ -1,0 +1,197 @@
+{
+    "For\u00e7a": [
+        {
+            "nome": "Gl\u00e1dio do Aventureiro",
+            "dano": "1d4",
+            "tipo": "Afiado/Leve",
+            "custo": "(2uP)",
+            "habilidades": "20% FOR em dano. L\u00e2mina do Legion\u00e1rio: curta e larga, sua espada tem cortes precisos sem decr\u00e9scimos em colis\u00f5es, (+1) em iniciativa e (+1) em rolagem de colis\u00e3o.",
+            "durabilidade": "(6/6 dur.)",
+            "slots": "(3/3 slots.)"
+        },
+        {
+            "nome": "Sabre Curto",
+            "dano": "1d4",
+            "tipo": "Afiado/Leve",
+            "custo": "(1uP)",
+            "habilidades": "10% DES e 10% FOR em dano. L\u00e2mina Torpe: ataques horizontais ganham b\u00f4nus de iniciativa (+1).",
+            "durabilidade": "(7/7 dur.)",
+            "slots": "(3/3 slots.)"
+        },
+        {
+            "nome": "Flansdel\u00e2n",
+            "dano": "1d4",
+            "tipo": "Afiado/Leve",
+            "custo": "(3uP)",
+            "habilidades": "10% EVA em dano 15% FOR em dano. Par Sanguin\u00e1rio: sendo combinada com qualquer outra arma tamb\u00e9m equipada pode realizar ataques consecutivos substituindo o Desbalan\u00e7o por Desvantagem",
+            "durabilidade": "(4/4 dur.)",
+            "slots": "(3/3 slots.)"
+        },
+        {
+            "nome": "Machadinha de Bronze",
+            "dano": "1d3",
+            "tipo": "Afiado/Leve",
+            "custo": "(2uP)",
+            "habilidades": "10% FOR e 10% EVA. Lan\u00e7ar ou Desferir: pode lan\u00e7ar seu machado com b\u00f4nus (+2) no acerto (alcance m\u00e1x: 3m) e dar (+1d2) de dano b\u00f4nus caso o alvo esteja abaixado ou ca\u00eddo.",
+            "durabilidade": "(7/7 dur.)",
+            "slots": "(3/3 slots.)"
+        }
+    ],
+    "Destreza": [
+        {
+            "nome": "Sabre Curto",
+            "dano": "1d4",
+            "tipo": "Afiado/Leve",
+            "custo": "(1uP)",
+            "habilidades": "10% DES e 10% FOR em dano. L\u00e2mina Torpe: ataques horizontais ganham b\u00f4nus de iniciativa (+1).",
+            "durabilidade": "(7/7 dur.)",
+            "slots": "(3/3 slots.)"
+        },
+        {
+            "nome": "Florete de Treino",
+            "dano": "1d4",
+            "tipo": "Afiado/Leve",
+            "habilidades": "15% EVA em dano e 15% DES. Ripostar: \u00e9 mais f\u00e1cil rebater (+1) um ataque que chocar sua arma, caso n\u00e3o seja Pesada. Contra-ataques ganham +(1) de acerto quando em v\u00edtimas em Abertura.",
+            "durabilidade": "(4/4 dur.)",
+            "slots": "(5/5 slots)"
+        },
+        {
+            "nome": "Kensumi",
+            "dano": "1d4",
+            "custo": "(2uP)",
+            "tipo": "Afiado/Leve",
+            "habilidades": "20% DES. Fio Leve ou L\u00e2mina de Bainha: por ser uma arma secund\u00e1ria e leve, sua katana pode ser sacada com (+2) de rolagem de iniciativa.",
+            "durabilidade": "(3/3 dur.)",
+            "slots": "(3/3 slots)"
+        },
+        {
+            "nome": "Adaga Plana",
+            "custo": "(1uP)",
+            "dano": "1d2",
+            "tipo": "Afiado/Leve",
+            "habilidades": "10% DES em dano. Expertise: pode arremessar sua arma com b\u00f4nus (+2) no acerto.",
+            "durabilidade": "(2/2 dur.)",
+            "slots": "(3/3 slots)"
+        },
+        {
+            "nome": "L\u00e2mina Serrilhada",
+            "custo": "(3uP)",
+            "tipo": "(adapt\u00e1vel)",
+            "dano": "1d4",
+            "tipo_dano": "Afiado/Leve",
+            "habilidades": "15% DES em dano. (+1) de dano quando usando duas-m\u00e3os. Morte \u00c1gil: voc\u00ea \u00e9 capaz de causar sangramentos em qualquer Besta ou criatura org\u00e2nica; al\u00e9m de causar (+1) tique de sangramento quando acertar um cr\u00edtico no dano.",
+            "durabilidade": "(4/4 dur.)",
+            "slots": "(3/3 slots)"
+        },
+        {
+            "nome": "Adaga Forcada",
+            "custo": "(2uP)",
+            "dano": "1d5",
+            "tipo": "Afiado/Leve",
+            "requisito": 0,
+            "habilidades": "5~30% DES em dano (proporcional \u00e0 gravidade da microrregi\u00e3o). Assassinar: causar dano \u00e0 inimigos Desatentos aplica hemorragia instantaneamente; se o inimigo j\u00e1 estiver sangrando, causa 50% de dano extra no pr\u00e9-c\u00e1lculo da rolagem de dano.",
+            "durabilidade": "(1/1 dur.)",
+            "slots": "(3/3 slots)"
+        },
+        {
+            "nome": "Tria\u00e7adora",
+            "custo": "(4uP)",
+            "tipo": "(adapt\u00e1vel)",
+            "requisito": 0,
+            "dano": "1d4",
+            "tipo_dano": "Penetrante/Leves",
+            "habilidades": "20% DES em dano. Encurralar: lan\u00e7ar essa arma empurra o alvo proporcionalmente \u00e0 for\u00e7a do lan\u00e7amento (FOR) e, caso atinja uma parede ou objeto f\u00edsico que possa absorver o impacto, Enra\u00edza e Atordoa o alvo.",
+            "durabilidade": "(6/6 dur.)",
+            "slots": "(3/3 slots)"
+        },
+        {
+            "nome": "Lan\u00e7a de Mil\u00edcia",
+            "custo": "(2uP)",
+            "dano": "1d4",
+            "tipo": "Penetrante/Leves",
+            "requisito": 0,
+            "tipo_dano": "(adapt\u00e1vel)",
+            "habilidades": "10% DES e EVA em dano. Desafio ou Troca: como sua arma serve melhor ao combate, voc\u00ea pode deixar preparado estocadas com b\u00f4nus (+2); ou, por seguran\u00e7a, preparar uma esquiva com b\u00f4nus de (+1).",
+            "durabilidade": "(8/8 dur.)",
+            "slots": "(3/3 slots)"
+        }
+    ],
+    "Atletismo": {
+        "nome": "Presa de Navalha",
+        "custo": "(3uP)",
+        "dano": "1d4",
+        "tipo": "Afiado/Leve",
+        "requisito": 0,
+        "habilidades": "15% ATL em dano. Corte Trai\u00e7oeiro: causa multiplicador em esguicho para a regi\u00e3o imediatamente inferior, sem decr\u00e9scimos.",
+        "durabilidade": "(4/4 dur.)",
+        "slots": "(3/3 slots)"
+    },
+    "Evas\u00e3o": [
+        {
+            "nome": "Florete de Treino",
+            "dano": "1d4",
+            "tipo": "Afiado/Leve",
+            "requisito": 0,
+            "habilidades": "15% EVA em dano e 15% DES. Ripostar: \u00e9 mais f\u00e1cil rebater (+1) um ataque que chocar sua arma, caso n\u00e3o seja Pesada. Contra-ataques ganham +(1) de acerto quando em v\u00edtimas em Abertura.",
+            "durabilidade": "(4/4 dur.)",
+            "slots": "(5/5 slots)"
+        },
+        {
+            "nome": "Kazekuri",
+            "custo": "(3uP)",
+            "dano": "1d5",
+            "tipo": "Afiado/Leve",
+            "tipo_dano": "(adapt\u00e1vel)",
+            "requisito": 10,
+            "habilidades": "15% EVA e 10% ATL em dano. (-2) em rolagem de choque. Gume do Assassino: sua arma n\u00e3o tem guarda, ajudando ataques transversais com (+1) de iniciativa.",
+            "durabilidade": "(6/6 dur.)",
+            "slots": "(3/3 slots)"
+        },
+        {
+            "nome": "Machadinha de Bronze",
+            "dano": "1d3",
+            "tipo": "Afiado/Leve",
+            "custo": "(2uP)",
+            "habilidades": "10% FOR e 10% EVA. Lan\u00e7ar ou Desferir: pode lan\u00e7ar seu machado com b\u00f4nus (+2) no acerto (alcance m\u00e1x: 3m) e dar (+1d2) de dano b\u00f4nus caso o alvo esteja abaixado ou ca\u00eddo.",
+            "durabilidade": "(7/7 dur.)",
+            "slots": "(3/3 slots)"
+        },
+        {
+            "nome": "Cortador do Ceifeiro",
+            "dano": "1d4",
+            "tipo": "Afiado/Leve",
+            "custo": "(2uP)",
+            "habilidades": "20% EVA em dano. Navalha Multiuso: sua arma \u00e9 retr\u00e1til como um canivete, sendo poss\u00edvel equip\u00e1-la em qualquer parte do corpo, lan\u00e7a-la (+1 no acerto) e ainda a usar para prospec\u00e7\u00e3o de fibras.",
+            "durabilidade": "(3/3 dur.)",
+            "slots": "(3/3 slots)"
+        },
+        {
+            "nome": "Liu Bei",
+            "custo": "(3uP)",
+            "dano": "1d4",
+            "tipo": "Penetrante/Leve",
+            "habilidades": "15 % EVA em dano. Agulhada: performar Estocadas com essa arma garante (+1) de acerto em (-0.2)t; qualquer outro tipo de ataque causa (-1) de dano base.",
+            "durabilidade": "(3/3 dur.)",
+            "slots": "(3/3 slots)"
+        },
+        {
+            "nome": "Adaga de Cavas",
+            "custo": "(2uP)",
+            "dano": "1d3",
+            "tipo": "Afiado/Leve",
+            "habilidades": "15% EVA em dano. L\u00e2mina Umbra: devido a um gume irregular voc\u00ea ganha b\u00f4nus de acerto cr\u00edtico (-1).",
+            "durabilidade": "(5/5 dur.)",
+            "slots": "(3/3 slots)"
+        },
+        {
+            "nome": "Lan\u00e7a de Mil\u00edcia",
+            "custo": "(2uP)",
+            "dano": "1d4",
+            "tipo": "Penetrante/Leves",
+            "tipo_dano": "(adapt\u00e1vel)",
+            "habilidades": "10% DES e EVA em dano. Desafio ou Troca: como sua arma serve melhor ao combate, voc\u00ea pode deixar preparado estocadas com b\u00f4nus (+2); ou, por seguran\u00e7a, preparar uma esquiva com b\u00f4nus de (+1).",
+            "durabilidade": "(8/8 dur.)",
+            "slots": "(3/3 slots)"
+        }
+    ]
+}
