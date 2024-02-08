@@ -2,28 +2,29 @@
 import random
 import pandas as pd
 from defs.classes import prob_classes
-from defs.mercenario_vamp import merc_vamp
-from defs.mercenario_arque import merc_arque
-from defs.mercenario_elfo import merc_elfo
-from defs.mercenario_simio import merc_simio
-from defs.mercenario_orc import merc_orc
-from defs.mercenario_magma import merc_magma
-from defs.mercenario_anao import merc_anao
-from defs.mercenario_void  import merc_void
-from defs.mercenario_troll import merc_troll
-from defs.mercenario_lupin import merc_lupin
-from defs.mercenario_taurus import merc_tauru
-from defs.mercenario_lonine import merc_leonine
-from defs.mercenario_feli import merc_felinio
-from defs.mercenario_chacali import merc_chacalico
-from defs.mercenario_javali  import merc_javalion
-from defs.mercenario_reptilio import merc_reptilio
-from defs.mercenario_ursarion import merc_ursa
+from defs.mercenario_vamp import merc_vamp, player_vamp
+from defs.mercenario_arque import merc_arque, player_arque
+from defs.mercenario_elfo import merc_elfo, player_elfo
+from defs.mercenario_simio import merc_simio, player_simio
+from defs.mercenario_orc import merc_orc, player_orc
+from defs.mercenario_magma import merc_magma, player_magma
+from defs.mercenario_anao import merc_anao, player_anao
+from defs.mercenario_void  import merc_void, player_void
+from defs.mercenario_troll import merc_troll, player_troll
+from defs.mercenario_lupin import merc_lupin, player_lupin
+from defs.mercenario_taurus import merc_tauru, player_tauru
+from defs.mercenario_lonine import merc_leonine, player_leonine
+from defs.mercenario_feli import merc_felinio, player_felinio
+from defs.mercenario_chacali import merc_chacalico, player_chacalico
+from defs.mercenario_javali  import merc_javalion, player_javalion
+from defs.mercenario_reptilio import merc_reptilio, player_reptilio
+from defs.mercenario_ursarion import merc_ursa, player_ursa
+from defs.mercenario_tritao import merc_tritao, player_tritao
+from defs.mercenario_denko import merc_denko, player_denko
+from defs.mercenario_aladico import merc_aladico, player_aladico
+from defs.mercenario_nivolio import merc_nivolio, player_nivolio
+from defs.mercenario_humano import merc_humano, player_humano
 from defs.proteção import escolha_armaduras
-from defs.mercenario_denko import merc_denko
-from defs.mercenario_aladico import merc_aladico
-from defs.mercenario_nivolio import merc_nivolio
-from defs.mercenario_humano import merc_humano
 from discord.ext import commands
 import discord
 
@@ -45,7 +46,6 @@ async def mercenario(ctx):
     racas = [
         "Vampirico", "Arqueonte", "Elfo", "Símio", "Orc", "Magmamir", "Anão", "Voidling", "Troll", "Lupínico","Taurus", "Leonine", "Felínio", "Chacálico", "Javálion", "Reptilio", "Ursárion","Denkomu", "Aládico", "Nivólio", "Humano"
         ]
-    
     
     
     raç = random.choice(racas)
@@ -112,22 +112,13 @@ async def vampirico(ctx):
     
     channel = (ctx.channel)
 
-    nome = random.choice(nomes['Personagem'])
-
-    arc = random.randint(1,10) + random.randint(1, 6)
-    vig = random.randint(1,10)
-    des = random.randint(1,10)
-    sab = random.randint(1,10)
-    forç = random.randint(1,10) + random.randint(1, 6)
-    atl = random.randint(1,10)
-    eva = random.randint(1,10)
-    car = random.randint(1,10)
-
-    pc = (arc + vig + des + sab + forç + atl + eva + car) / 40
+    dados = player_vamp()
 
     await ctx.message.delete()
 
-    await channel.send(f'{ctx.author.mention}  \nNome: {nome}      Raça: Vampirico   PC: {pc:.2f}\nARC: {arc}  VIG: {vig}  DES: {des}  SAB: {sab}\nFOR: {forç}  ATL: {atl}  EVA: {eva}  CAR: {car}')
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Vampirico":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
 # Rolagem Arqueonte
 @bot.command()
@@ -135,22 +126,13 @@ async def arqueonte(ctx):
 
     channel = (ctx.channel)    
     
-    nome = random.choice(nomes['Personagem'])
-
-    arc = random.randint(1,10)
-    vig = random.randint(1,10)
-    des = random.randint(1,10)
-    sab = random.randint(1,10) + random.randint(1, 6) + random.randint(1, 6)
-    forç = random.randint(1,10)
-    atl = random.randint(1,10)
-    eva = random.randint(1,10)
-    car = random.randint(1,10)
-
-    pc = (arc + vig + des + sab + forç + atl + eva + car) / 40
+    dados = player_arque()
 
     await ctx.message.delete()
         
-    await channel.send(f'{ctx.author.mention}  \nNome: {nome}      Raça: Arqueonte   PC: {pc:.2f}\nARC: {arc}  VIG: {vig}  DES: {des}  SAB: {sab}\nFOR: {forç}  ATL: {atl}  EVA: {eva}  CAR: {car}')
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Arqueonte":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
 # Rolagem Elfo
 @bot.command()
@@ -158,23 +140,13 @@ async def elfo(ctx):
     
     channel = (ctx.channel)
 
-    nome = random.choice(nomes['Personagem'])
-
-    arc = random.randint(1,10)
-    vig = random.randint(1,10)
-    des = random.randint(1,10) + random.randint(1, 6)
-    sab = random.randint(1,10) + random.randint(1, 6)
-    forç = random.randint(1,10)
-    atl = random.randint(1,10)
-    eva = random.randint(1,10)
-    car = random.randint(1,10)
-
-    pc = (arc + vig + des + sab + forç + atl + eva + car) / 40
+    dados = player_elfo()
 
     await ctx.message.delete()
 
-    await channel.send(f'{ctx.author.mention}  \nNome: {nome}      Raça: Elfo   PC: {pc:.2f}\nARC: {arc}  VIG: {vig}  DES: {des}  SAB: {sab}\nFOR: {forç}  ATL: {atl}  EVA: {eva}  CAR: {car}')
-
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Elfo":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 # Rolagem Simio
 @bot.command()
 async def simio(ctx):   
@@ -182,22 +154,14 @@ async def simio(ctx):
     
     channel = (ctx.channel)
 
-    nome = random.choice(nomes['Personagem'])
 
-    arc = random.randint(1,10)
-    vig = random.randint(1,10)
-    des = random.randint(1,10) + random.randint(1, 6)
-    sab = random.randint(1,10)
-    forç = random.randint(1,10) + random.randint(1, 6)
-    atl = random.randint(1,10)
-    eva = random.randint(1,10)
-    car = random.randint(1,10)
-
-    pc = (arc + vig + des + sab + forç + atl + eva + car) / 40
+    dados = player_simio()
 
     await ctx.message.delete()
         
-    await channel.send(f'{ctx.author.mention}  \nNome: {nome}      Raça: Símio   PC: {pc:.2f}\nARC: {arc}  VIG: {vig}  DES: {des}  SAB: {sab}\nFOR: {forç}  ATL: {atl}  EVA: {eva}  CAR: {car}')
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Simio":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
 # Rolagem Orc
 @bot.command()
@@ -205,22 +169,13 @@ async def orc(ctx):
    
     channel = (ctx.channel)
 
-    nome = random.choice(nomes['Personagem'])
-
-    arc = random.randint(1,10)
-    vig = random.randint(1,10) + random.randint(1, 6)
-    des = random.randint(1,10)
-    sab = random.randint(1,10)
-    forç = random.randint(1,10) + random.randint(1, 6)
-    atl = random.randint(1,10)
-    eva = random.randint(1,10)
-    car = random.randint(1,10)
-
-    pc = (arc + vig + des + sab + forç + atl + eva + car) / 40
+    dados = player_orc()
 
     await ctx.message.delete()
         
-    await channel.send(f'{ctx.author.mention}  \nNome: {nome}      Raça: Orc   PC: {pc:.2f}\nARC: {arc}  VIG: {vig}  DES: {des}  SAB: {sab}\nFOR: {forç}  ATL: {atl}  EVA: {eva}  CAR: {car}')
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Orc":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
 # Rolagem Magmamir
 @bot.command()
@@ -228,22 +183,13 @@ async def magmamir(ctx):
     
     channel = (ctx.channel)
 
-    nome = random.choice(nomes['Personagem'])
-
-    arc = random.randint(1,10) + random.randint(1, 6)
-    vig = random.randint(1,10) + random.randint(1, 6)
-    des = random.randint(1,10)
-    sab = random.randint(1,10)
-    forç = random.randint(1,10)
-    atl = random.randint(1,10)
-    eva = random.randint(1,10)
-    car = random.randint(1,10)
-
-    pc = (arc + vig + des + sab + forç + atl + eva + car) / 40
+    dados = player_magma()
 
     await ctx.message.delete()
         
-    await channel.send(f'{ctx.author.mention}  \nNome: {nome}      Raça: Magmamir   PC: {pc:.2f}\nARC: {arc}  VIG: {vig}  DES: {des}  SAB: {sab}\nFOR: {forç}  ATL: {atl}  EVA: {eva}  CAR: {car}')
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Magmamir":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
 # Rolagem Anão
 @bot.command()
@@ -251,22 +197,13 @@ async def anao(ctx):
     
     channel = (ctx.channel)
 
-    nome = random.choice(nomes['Personagem'])
-
-    arc = random.randint(1,10)
-    vig = random.randint(1,10)
-    des = random.randint(1,10)
-    sab = random.randint(1,10) + random.randint(1, 6)
-    forç = random.randint(1,10) + random.randint(1, 6)
-    atl = random.randint(1,10)
-    eva = random.randint(1,10)
-    car = random.randint(1,10)
-
-    pc = (arc + vig + des + sab + forç + atl + eva + car) / 40
+    dados = player_anao()
 
     await ctx.message.delete()
         
-    await channel.send(f'{ctx.author.mention}  \nNome: {nome}      Raça: Anão   PC: {pc:.2f}\nARC: {arc}  VIG: {vig}  DES: {des}  SAB: {sab}\nFOR: {forç}  ATL: {atl}  EVA: {eva}  CAR: {car}')
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Anão":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
 #  Rolagem Voidling
 @bot.command()
@@ -274,22 +211,13 @@ async def voidling(ctx):
    
     channel = (ctx.channel)
 
-    nome = random.choice(nomes['Personagem'])
-
-    arc = random.randint(1,10)
-    vig = random.randint(1,10)
-    des = random.randint(1,10) + random.randint(1, 6)
-    sab = random.randint(1,10)
-    forç = random.randint(1,10)
-    atl = random.randint(1,10)
-    eva = random.randint(1,10) + random.randint(1, 6)
-    car = random.randint(1,10)
-
-    pc = (arc + vig + des + sab + forç + atl + eva + car) / 40
+    dados = player_void()
 
     await ctx.message.delete()
         
-    await channel.send(f'{ctx.author.mention}  \nNome: {nome}      Raça: Voidling   PC: {pc:.2f}\nARC: {arc}  VIG: {vig}  DES: {des}  SAB: {sab}\nFOR: {forç}  ATL: {atl}  EVA: {eva}  CAR: {car}')
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Voidling":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
 # Rolagem Troll
 @bot.command()
@@ -297,22 +225,13 @@ async def troll(ctx):
 
     channel = (ctx.channel)
 
-    nome = random.choice(nomes['Personagem'])
-
-    arc = random.randint(1,10) + random.randint(1, 6) + random.randint(1, 6)
-    vig = random.randint(1,10)
-    des = random.randint(1,10)
-    sab = random.randint(1,10)
-    forç = random.randint(1,10)
-    atl = random.randint(1,10)
-    eva = random.randint(1,10)
-    car = random.randint(1,10)
-
-    pc = (arc + vig + des + sab + forç + atl + eva + car) / 40
+    dados = player_troll()
 
     await ctx.message.delete()
         
-    await channel.send(f'{ctx.author.mention}  \nNome: {nome}      Raça: Troll   PC: {pc:.2f}\nARC: {arc}  VIG: {vig}  DES: {des}  SAB: {sab}\nFOR: {forç}  ATL: {atl}  EVA: {eva}  CAR: {car}')
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Troll":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
 # Rolagem Lupínico
 @bot.command()
@@ -320,22 +239,13 @@ async def lupinico(ctx):
 
     channel = (ctx.channel)
 
-    nome = random.choice(nomes['Personagem'])
-
-    arc = random.randint(1,10)
-    vig = random.randint(1,10)
-    des = random.randint(1,10)
-    sab = random.randint(1,10)
-    forç = random.randint(1,10)
-    atl = random.randint(1,10) + random.randint(1, 6)
-    eva = random.randint(1,10) + random.randint(1, 6)
-    car = random.randint(1,10)
-
-    pc = (arc + vig + des + sab + forç + atl + eva + car) / 40
+    dados = player_lupin()
 
     await ctx.message.delete()
         
-    await channel.send(f'{ctx.author.mention}  \nNome: {nome}      Raça: Lupínico   PC: {pc:.2f}\nARC: {arc}  VIG: {vig}  DES: {des}  SAB: {sab}\nFOR: {forç}  ATL: {atl}  EVA: {eva}  CAR: {car}')
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Lupinico":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
 #Rolagem Taurus
 @bot.command()
@@ -343,22 +253,13 @@ async def taurus(ctx):
    
     channel = (ctx.channel)
 
-    nome = random.choice(nomes['Personagem'])
-
-    arc = random.randint(1,10)
-    vig = random.randint(1,10) + random.randint(1, 6)
-    des = random.randint(1,10)
-    sab = random.randint(1,10)
-    forç = random.randint(1,10)
-    atl = random.randint(1,10) + random.randint(1, 6)
-    eva = random.randint(1,10)
-    car = random.randint(1,10)
-
-    pc = (arc + vig + des + sab + forç + atl + eva + car) / 40
+    dados = player_tauru()
 
     await ctx.message.delete()
         
-    await channel.send(f'{ctx.author.mention}  \nNome: {nome}      Raça: Taurus   PC: {pc:.2f}\nARC: {arc}  VIG: {vig}  DES: {des}  SAB: {sab}\nFOR: {forç}  ATL: {atl}  EVA: {eva}  CAR: {car}')
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Taurus":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
 # Rolagem Leonine
 @bot.command()
@@ -366,22 +267,13 @@ async def leonine(ctx):
     
     channel = (ctx.channel)
 
-    nome = random.choice(nomes['Personagem'])
-
-    arc = random.randint(1,10)
-    vig = random.randint(1,10)
-    des = random.randint(1,10)
-    sab = random.randint(1,10)
-    forç = random.randint(1,10) + random.randint(1, 6)
-    atl = random.randint(1,10) + random.randint(1, 6)
-    eva = random.randint(1,10)
-    car = random.randint(1,10)
-
-    pc = (arc + vig + des + sab + forç + atl + eva + car) / 40
+    dados = player_leonine()
 
     await ctx.message.delete()
         
-    await channel.send(f'{ctx.author.mention}  \nNome: {nome}      Raça: Leonine   PC: {pc:.2f}\nARC: {arc}  VIG: {vig}  DES: {des}  SAB: {sab}\nFOR: {forç}  ATL: {atl}  EVA: {eva}  CAR: {car}')
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Leonine":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
 # Rolagem Felínio
 @bot.command()
@@ -389,22 +281,13 @@ async def felinio(ctx):
     
     channel = (ctx.channel)
 
-    nome = random.choice(nomes['Personagem'])
-
-    arc = random.randint(1,10)
-    vig = random.randint(1,10)
-    des = random.randint(1,10) + random.randint(1, 6) + random.randint(1, 6)
-    sab = random.randint(1,10) 
-    forç = random.randint(1,10)
-    atl = random.randint(1,10)
-    eva = random.randint(1,10)
-    car = random.randint(1,10)
-
-    pc = (arc + vig + des + sab + forç + atl + eva + car) / 40
+    dados = player_felinio()
 
     await ctx.message.delete()
         
-    await channel.send(f'{ctx.author.mention}  \nNome: {nome}      Raça: Felínio   PC: {pc:.2f}\nARC: {arc}  VIG: {vig}  DES: {des}  SAB: {sab}\nFOR: {forç}  ATL: {atl}  EVA: {eva}  CAR: {car}')
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Felínio":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
 # Rolagem Chacálico
 @bot.command()
@@ -412,22 +295,13 @@ async def chacalico(ctx):
     
     channel = (ctx.channel)
 
-    nome = random.choice(nomes['Personagem'])
-
-    arc = random.randint(1,10)
-    vig = random.randint(1,10)
-    des = random.randint(1,10)
-    sab = random.randint(1,10)
-    forç = random.randint(1,10) + random.randint(1, 6)
-    atl = random.randint(1,10)
-    eva = random.randint(1,10) + random.randint(1, 6)
-    car = random.randint(1,10)
-
-    pc = (arc + vig + des + sab + forç + atl + eva + car) / 40
+    dados = player_chacalico()
 
     await ctx.message.delete()
         
-    await channel.send(f'{ctx.author.mention}  \nNome: {nome}      Raça: Chacálico   PC: {pc:.2f}\nARC: {arc}  VIG: {vig}  DES: {des}  SAB: {sab}\nFOR: {forç}  ATL: {atl}  EVA: {eva}  CAR: {car}')
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Chacalico":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
 # Rolagem Javálion
 @bot.command()
@@ -435,22 +309,13 @@ async def javalion(ctx):
     
     channel = (ctx.channel)
 
-    nome = random.choice(nomes['Personagem'])
-
-    arc = random.randint(1,10)
-    vig = random.randint(1,10) + random.randint(1, 6) + random.randint(1, 6)
-    des = random.randint(1,10)
-    sab = random.randint(1,10)
-    forç = random.randint(1,10)
-    atl = random.randint(1,10)
-    eva = random.randint(1,10)
-    car = random.randint(1,10)
-
-    pc = (arc + vig + des + sab + forç + atl + eva + car) / 40
+    dados = player_javalion()
 
     await ctx.message.delete()
         
-    await channel.send(f'{ctx.author.mention}  \nNome: {nome}      Raça: Javálion   PC: {pc:.2f}\nARC: {arc}  VIG: {vig}  DES: {des}  SAB: {sab}\nFOR: {forç}  ATL: {atl}  EVA: {eva}  CAR: {car}')
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Javalion":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
 # Rolagem Reptilio
 @bot.command()
@@ -458,22 +323,13 @@ async def reptilio(ctx):
     
     channel = (ctx.channel)
 
-    nome = random.choice(nomes['Personagem'])
-
-    arc = random.randint(1,10)
-    vig = random.randint(1,10)
-    des = random.randint(1,10)
-    sab = random.randint(1,10)
-    forç = random.randint(1,10)
-    atl = random.randint(1,10)
-    eva = random.randint(1,10) + random.randint(1, 6) + random.randint(1, 6)
-    car = random.randint(1,10)
-
-    pc = (arc + vig + des + sab + forç + atl + eva + car) / 40
+    dados = player_reptilio()
 
     await ctx.message.delete()
         
-    await channel.send(f'{ctx.author.mention}  \nNome: {nome}      Raça: Repitilio   PC: {pc:.2f}\nARC: {arc}  VIG: {vig}  DES: {des}  SAB: {sab}\nFOR: {forç}  ATL: {atl}  EVA: {eva}  CAR: {car}')
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Reptilio":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
 # Rolagem Ursárion
 @bot.command()
@@ -481,22 +337,13 @@ async def ursarion(ctx):
     
     channel = (ctx.channel)
 
-    nome = random.choice(nomes['Personagem'])
-
-    arc = random.randint(1,10)
-    vig = random.randint(1,10)
-    des = random.randint(1,10)
-    sab = random.randint(1,10)
-    forç = random.randint(1,10) + random.randint(1, 6) + random.randint(1, 6)
-    atl = random.randint(1,10)
-    eva = random.randint(1,10)
-    car = random.randint(1,10)
-
-    pc = (arc + vig + des + sab + forç + atl + eva + car) / 40
+    dados = player_ursa()
 
     await ctx.message.delete()    
         
-    await channel.send(f'{ctx.author.mention}  \nNome: {nome}      Raça: Ursarion   PC: {pc:.2f}\nARC: {arc}  VIG: {vig}  DES: {des}  SAB: {sab}\nFOR: {forç}  ATL: {atl}  EVA: {eva}  CAR: {car}')
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Denko":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
 # Rolagem Tritão
 @bot.command()
@@ -504,22 +351,13 @@ async def tritao(ctx):
     
     channel = (ctx.channel)
 
-    nome = random.choice(nomes['Personagem'])
-
-    arc = random.randint(1,10) + random.randint(1, 6)
-    vig = random.randint(1,10)
-    des = random.randint(1,10)
-    sab = random.randint(1,10)
-    forç = random.randint(1,10)
-    atl = random.randint(1,10) + random.randint(1, 6)
-    eva = random.randint(1,10)
-    car = random.randint(1,10)
-
-    pc = (arc + vig + des + sab + forç + atl + eva + car) / 40
+    dados = player_tritao()
 
     await ctx.message.delete()
         
-    await channel.send(f'{ctx.author.mention}  \nNome: {nome}      Raça: Tritão   PC: {pc:.2f}\nARC: {arc}  VIG: {vig}  DES: {des}  SAB: {sab}\nFOR: {forç}  ATL: {atl}  EVA: {eva}  CAR: {car}')
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Tritão":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
 # Rolagem Denkomu
 @bot.command()
@@ -527,22 +365,13 @@ async def denkomu(ctx):
     
     channel = (ctx.channel)
 
-    nome = random.choice(nomes['Personagem'])
-
-    arc = random.randint(1,10)
-    vig = random.randint(1,10) + random.randint(1, 6)
-    des = random.randint(1,10) + random.randint(1, 6)
-    sab = random.randint(1,10)
-    forç = random.randint(1,10)
-    atl = random.randint(1,10)
-    eva = random.randint(1,10)
-    car = random.randint(1,10)
-
-    pc = (arc + vig + des + sab + forç + atl + eva + car) / 40
+    dados = player_denko()
 
     await ctx.message.delete()
         
-    await channel.send(f'{ctx.author.mention}  \nNome: {nome}      Raça: Denkomu   PC: {pc:.2f}\nARC: {arc}  VIG: {vig}  DES: {des}  SAB: {sab}\nFOR: {forç}  ATL: {atl}  EVA: {eva}  CAR: {car}')
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Denkomu":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
 # Rolagem Aládico
 @bot.command()
@@ -550,22 +379,13 @@ async def aladico(ctx):
    
     channel = (ctx.channel)
 
-    nome = random.choice(nomes['Personagem'])
-
-    arc = random.randint(1,10)
-    vig = random.randint(1,10)
-    des = random.randint(1,10)
-    sab = random.randint(1,10)
-    forç = random.randint(1,10)
-    atl = random.randint(1,10) + random.randint(1, 6) + random.randint(1, 6)
-    eva = random.randint(1,10)
-    car = random.randint(1,10)
-
-    pc = (arc + vig + des + sab + forç + atl + eva + car) / 40
+    dados = player_aladico()
 
     await ctx.message.delete()
         
-    await channel.send(f'{ctx.author.mention}  \nNome: {nome}      Raça: Aládico   PC: {pc:.2f}\nARC: {arc}  VIG: {vig}  DES: {des}  SAB: {sab}\nFOR: {forç}  ATL: {atl}  EVA: {eva}  CAR: {car}')
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Aladico":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
 # Rolagem Nivólio
 @bot.command()
@@ -573,22 +393,13 @@ async def nivolio(ctx):
     
     channel = (ctx.channel)
 
-    nome = random.choice(nomes['Personagem'])
-
-    arc = random.randint(1,10) + random.randint(1, 6)
-    vig = random.randint(1,10)
-    des = random.randint(1,10)
-    sab = random.randint(1,10)
-    forç = random.randint(1,10)
-    atl = random.randint(1,10)
-    eva = random.randint(1,10) + random.randint(1, 6)
-    car = random.randint(1,10)
-
-    pc = (arc + vig + des + sab + forç + atl + eva + car) / 40
+    dados =player_nivolio()
 
     await ctx.message.delete()
         
-    await channel.send(f'{ctx.author.mention}  \nNome: {nome}      Raça: Arqueonte   PC: {pc:.2f}\nARC: {arc}  VIG: {vig}  DES: {des}  SAB: {sab}\nFOR: {forç}  ATL: {atl}  EVA: {eva}  CAR: {car}')
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Nivolio":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
 # Rolagem Humano
 @bot.command()
@@ -596,21 +407,12 @@ async def humano(ctx):
     
     channel = (ctx.channel)
 
-    nome = random.choice(nomes['Personagem'])
-
-    arc = random.randint(1,10) + 1
-    vig = random.randint(1,10) + 1
-    des = random.randint(1,10) + 1
-    sab = random.randint(1,10) + 1
-    forç = random.randint(1,10) + 1
-    atl = random.randint(1,10) + 1
-    eva = random.randint(1,10) + 1
-    car = random.randint(1,10) + 1
-
-    pc = (arc + vig + des + sab + forç + atl + eva + car) / 40
+    dados = player_humano()
 
     await ctx.message.delete()
         
-    await channel.send(f'{ctx.author.mention}  \nNome: {nome}      Raça: Humano   PC: {pc:.2f}\nARC: {arc}  VIG: {vig}  DES: {des}  SAB: {sab}\nFOR: {forç}  ATL: {atl}  EVA: {eva}  CAR: {car}')
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Humano":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
-bot.run("MTEzMDE1OTEwMTIyMjA2MDExMg.GxrsPV.mfI-GfJqsQlrTqcDpZtGHxaUO2hWROVZAsxd-I")
+bot.run("MTEzMDE1OTEwMTIyMjA2MDExMg.Ge6ctj.v9fpkYIp4Ctn59N1R_mehh5DnBQ6ivFjcxr9BY")

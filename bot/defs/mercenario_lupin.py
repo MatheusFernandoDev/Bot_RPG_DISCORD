@@ -3,7 +3,7 @@ import pandas as pd
 from defs.classes import prob_classes
 
 
-nomes_celticos = pd.read_csv("arquivos/nomes_celticos.csv")
+nomes_celticos = pd.read_csv("bot/arquivos/nomes_celticos.csv")
 
 def merc_lupin():
     nome = random.choice(nomes_celticos['Personagem'])
@@ -24,4 +24,15 @@ def merc_lupin():
     classe = prob_classes("Ladino", maior) 
 
     dados = {"Nome": nome, "PC": pc,"Classe": classe,"Atributos": atributos1} 
+    return dados
+
+def player_lupin():
+    nome = random.choice(nomes_celticos['Personagem'])
+
+    atributos = {"for": random.randint(1,10), "vig": random.randint(1,10), "des": random.randint(1,10), "atl": random.randint(1,10) + random.randint(1,6), "eva": random.randint(1,10 ) + random.randint(1,6), "sab": random.randint(1,10), "arc": random.randint(1,10), "car": random.randint(1,10)}
+
+    pc = sum(atributos.values()) /40
+
+    dados = {"Nome": nome, "PC": pc,"Atributos": atributos} 
+    
     return dados

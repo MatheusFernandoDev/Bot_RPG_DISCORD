@@ -3,7 +3,7 @@ import pandas as pd
 from defs.classes import prob_classes
 
 
-nomes_eslavos = pd.read_csv("arquivos/nomes_eslavos.csv")
+nomes_eslavos = pd.read_csv("bot/arquivos/nomes_eslavos.csv")
 
 
 def merc_ursa():
@@ -25,4 +25,15 @@ def merc_ursa():
     classe = prob_classes("Rufião", maior) 
 
     dados = {"Nome": nome, "PC": pc,"Classe": classe,"Atributos": atributos1} 
+    return dados
+
+def player_ursa():
+    nome = random.choice(nomes_eslavos['Personagem'])
+
+    atributos = {"for": random.randint(1,10) + random.randint(1,6) + random.randint(1,6), "vig": random.randint(1,10), "des": random.randint(1,10), "atl": random.randint(1,10), "eva": random.randint(1,10), "sab": random.randint(1,10), "arc": random.randint(1,10), "car": random.randint(1,10)}
+
+    pc = sum(atributos.values()) /40
+
+    dados = {"Nome": nome, "PC": pc,"Atributos": atributos} 
+    
     return dados

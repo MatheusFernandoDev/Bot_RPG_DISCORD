@@ -3,7 +3,7 @@ import pandas as pd
 from defs.classes import prob_classes
 
 
-nomes_africanos = pd.read_csv("arquivos/nomes_africanos.csv")
+nomes_africanos = pd.read_csv("bot/arquivos/nomes_africanos.csv")
 
 def merc_orc():
     nome = random.choice(nomes_africanos['Personagem'])
@@ -24,4 +24,15 @@ def merc_orc():
     classe = prob_classes("Lanceiro", maior) 
 
     dados = {"Nome": nome, "PC": pc,"Classe": classe,"Atributos": atributos1} 
+    return dados
+
+def player_orc():
+    nome = random.choice(nomes_africanos['Personagem'])
+
+    atributos = {"for": random.randint(1,10) + random.randint(1,6), "vig": random.randint(1,10) + random.randint(1,6), "des": random.randint(1,10), "atl": random.randint(1,10), "eva": random.randint(1,10), "sab": random.randint(1,10), "arc": random.randint(1,10), "car": random.randint(1,10)}
+
+    pc = sum(atributos.values()) /40
+
+    dados = {"Nome": nome, "PC": pc,"Atributos": atributos} 
+    
     return dados

@@ -3,7 +3,7 @@ import pandas as pd
 from defs.classes import prob_classes
 
 
-nomes_abisal = pd.read_csv("arquivos/nomes_abisal.csv")
+nomes_abisal = pd.read_csv("bot/arquivos/nomes_abisal.csv")
 
 
 def merc_denko():
@@ -25,4 +25,15 @@ def merc_denko():
     classe = prob_classes("Cavaleiro", maior) 
 
     dados = {"Nome": nome, "PC": pc,"Classe": classe,"Atributos": atributos1} 
+    return dados
+
+def player_denko():
+    nome = random.choice(nomes_abisal['Personagem'])
+
+    atributos = {"for": random.randint(1,10), "vig": random.randint(1,10) + random.randint(1,6), "des": random.randint(1,10) + random.randint(1,6), "atl": random.randint(1,10), "eva": random.randint(1,10), "sab": random.randint(1,10), "arc": random.randint(1,10), "car": random.randint(1,10)}
+
+    pc = sum(atributos.values()) /40
+
+    dados = {"Nome": nome, "PC": pc,"Atributos": atributos} 
+    
     return dados

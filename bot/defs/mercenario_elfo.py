@@ -3,7 +3,7 @@ import pandas as pd
 from defs.classes import prob_classes
 
 
-nomes_polinesios = pd.read_csv("arquivos/nomes_polinesios.csv")
+nomes_polinesios = pd.read_csv("bot/arquivos/nomes_polinesios.csv")
 
 def merc_elfo():
     nome = random.choice(nomes_polinesios['Personagem'])
@@ -24,4 +24,15 @@ def merc_elfo():
     classe = prob_classes("Sentinela", maior) 
 
     dados = {"Nome": nome, "PC": pc,"Classe": classe,"Atributos": atributos1} 
+    return dados
+
+def player_elfo():
+    nome = random.choice(nomes_polinesios['Personagem'])
+
+    atributos = {"for": random.randint(1,10), "vig": random.randint(1,10), "des": random.randint(1,10) + random.randint(1,6), "atl": random.randint(1,10), "eva": random.randint(1,10), "sab": random.randint(1,10) + random.randint(1,6), "arc": random.randint(1,10), "car": random.randint(1,10)}
+
+    pc = sum(atributos.values()) /40
+
+    dados = {"Nome": nome, "PC": pc,"Atributos": atributos} 
+    
     return dados

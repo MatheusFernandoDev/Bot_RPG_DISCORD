@@ -3,7 +3,7 @@ import pandas as pd
 from defs.classes import prob_classes
 
 
-nomes = pd.read_csv("arquivos/nomes_rpg.csv")
+nomes = pd.read_csv("bot/arquivos/nomes_rpg.csv")
 
 def merc_humano():
     nome = random.choice(nomes['Personagem'])
@@ -24,4 +24,15 @@ def merc_humano():
     classe = prob_classes("Lanceiro", maior) 
 
     dados = {"Nome": nome, "PC": pc,"Classe": classe,"Atributos": atributos1} 
+    return dados
+
+def player_humano():
+    nome = random.choice(nomes['Personagem'])
+
+    atributos = {"for": random.randint(1,10) + 1, "vig": random.randint(1,10) + 1, "des": random.randint(1,10) + 1, "atl": random.randint(1,10) + 1, "eva": random.randint(1,10) + 1, "sab": random.randint(1,10) + 1, "arc": random.randint(1,10) + 1, "car": random.randint(1,10) + 1}
+
+    pc = sum(atributos.values()) /40
+
+    dados = {"Nome": nome, "PC": pc,"Atributos": atributos} 
+    
     return dados
