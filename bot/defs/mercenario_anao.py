@@ -1,8 +1,7 @@
 import random
 import pandas as pd
 from defs.classes import prob_classes
-from armas import armas_merc
-
+from defs.armas import armas_merc
 nomes_nordicos = pd.read_csv("bot/arquivos/csv/nomes_nordicos.csv")
 
 def merc_anao():

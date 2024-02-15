@@ -1,7 +1,7 @@
 import random
 import pandas as pd
 from defs.classes import prob_classes
-
+from defs.armas import armas_merc
 
 nomes_eslavos = pd.read_csv("bot/arquivos/csv/nomes_eslavos.csv")
 
@@ -17,14 +17,23 @@ def merc_tritao():
        
     maior_valor = max((atributos1["vig"], atributos1["des"], atributos1["for"], atributos1["atl"], atributos1["eva"]))
 
+    maior_valor2 = max((atributos1["des"], atributos1["for"], atributos1["atl"], atributos1["eva"]))
+
     for chave, valor in atributos1.items():
-        if valor == maior_valor:
-            maior = chave
-            break
+        for chave, valor in atributos1.items():
+            if valor == maior_valor:
+                maior = chave
+                break         
+        if valor == maior_valor2:
+                maior_arma = chave
+                break
         
     classe = prob_classes("Rufião", maior) 
 
-    dados = {"Nome": nome, "PC": pc,"Classe": classe,"Atributos": atributos1} 
+    equipamento = armas_merc(maior_arma)
+
+    dados = {"Nome": nome, "PC": pc,"Classe": classe,"Atributos": atributos1, "Equipamento": equipamento}
+     
     return dados
 
 def player_tritao():

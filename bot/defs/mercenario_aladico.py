@@ -1,8 +1,7 @@
 import random
 import pandas as pd
-from classes import prob_classes
-from armas import armas_merc
-
+from defs.classes import prob_classes
+from defs.armas import armas_merc
 
 nomes_romanos = pd.read_csv("bot/arquivos/csv/nomes_romanos.csv")
 

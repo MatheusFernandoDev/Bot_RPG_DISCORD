@@ -1,7 +1,7 @@
 
 import random
 import pandas as pd
-from defs.classes import prob_classes
+
 from defs.mercenario_vamp import merc_vamp, player_vamp
 from defs.mercenario_arque import merc_arque, player_arque
 from defs.mercenario_elfo import merc_elfo, player_elfo
@@ -98,12 +98,13 @@ async def mercenario(ctx):
     channel = (ctx.channel)
     
     await ctx.message.delete()
-    
+    print(dados)
 
-    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {raç:<10} PC: {dados["PC"]}  Classe:  {dados["Classe"]}\n'
-      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
-      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}\n"
-      f"\nProteção: \n{escolha_armaduras():<4}\nEquipamentos: \n{}")
+    # await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {raç:<10} PC: {dados["PC"]}  Classe:  {dados["Classe"]}\n'
+      #f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      #f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}\n"
+      #f"\nProteção: \n{escolha_armaduras():<4}\nEquipamentos: \n{dados['Equipamento']}\n"
+      #f"Nome: {dados['Equipamento']['nome']} Dano: {dados['Equipamento']['dano']} {dados['Equipamento']['tipo']} {dados['Equipamento']['peso']}")
     
        
 #  Rolagem Vampirico
