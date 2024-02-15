@@ -5,7 +5,7 @@ from defs.classes import prob_classes
 
 
 
-nomes_alemaes = pd.read_csv("bot/arquivos/nomes_alemaes.csv")
+nomes_alemaes = pd.read_csv("bot/arquivos/csv/nomes_alemaes.csv")
 
 def merc_vamp():
     

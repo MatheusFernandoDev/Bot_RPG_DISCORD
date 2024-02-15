@@ -3,7 +3,7 @@ import pandas as pd
 from defs.classes import prob_classes
 
 
-nomes_abisal = pd.read_csv("bot/arquivos/nomes_abisal.csv")
+nomes_abisal = pd.read_csv("bot/arquivos/csv/nomes_abisal.csv")
 
 
 def merc_nivolio():

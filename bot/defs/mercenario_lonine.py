@@ -3,7 +3,7 @@ import pandas as pd
 from defs.classes import prob_classes
 
 
-nomes_britanicos = pd.read_csv("bot/arquivos/nomes_britanicos.csv")
+nomes_britanicos = pd.read_csv("bot/arquivos/csv/nomes_britanicos.csv")
 
 def merc_leonine():
     nome = random.choice(nomes_britanicos['Personagem'])

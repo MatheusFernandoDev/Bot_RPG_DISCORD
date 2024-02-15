@@ -25,6 +25,7 @@ from defs.mercenario_aladico import merc_aladico, player_aladico
 from defs.mercenario_nivolio import merc_nivolio, player_nivolio
 from defs.mercenario_humano import merc_humano, player_humano
 from defs.proteção import escolha_armaduras
+from defs.armas import armas_merc
 from discord.ext import commands
 import discord
 
@@ -102,7 +103,7 @@ async def mercenario(ctx):
     await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {raç:<10} PC: {dados["PC"]}  Classe:  {dados["Classe"]}\n'
       f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
       f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}\n"
-      f"\nProteção: \n{escolha_armaduras():<4}")
+      f"\nProteção: \n{escolha_armaduras():<4}\nEquipamentos: \n{}")
     
        
 #  Rolagem Vampirico

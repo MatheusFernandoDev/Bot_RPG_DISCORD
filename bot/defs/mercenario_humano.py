@@ -3,7 +3,7 @@ import pandas as pd
 from defs.classes import prob_classes
 
 
-nomes = pd.read_csv("bot/arquivos/nomes_rpg.csv")
+nomes = pd.read_csv("bot/arquivos/csv/nomes_rpg.csv")
 
 def merc_humano():
     nome = random.choice(nomes['Personagem'])

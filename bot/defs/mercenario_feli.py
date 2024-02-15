@@ -3,7 +3,7 @@ import pandas as pd
 from defs.classes import prob_classes
 
 
-nomes_chineses = pd.read_csv("bot/arquivos/nomes_chineses.csv")
+nomes_chineses = pd.read_csv("bot/arquivos/csv/nomes_chineses.csv")
 
 
 def merc_felinio():

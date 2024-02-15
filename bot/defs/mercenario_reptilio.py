@@ -3,7 +3,7 @@ import pandas as pd
 from defs.classes import prob_classes
 
 
-nomes_centro_americanos = pd.read_csv("bot/arquivos/nomes_centro_americanos.csv")
+nomes_centro_americanos = pd.read_csv("bot/arquivos/csv/nomes_centro_americanos.csv")
 
 
 def merc_reptilio():

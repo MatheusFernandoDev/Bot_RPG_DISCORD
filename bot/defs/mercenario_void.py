@@ -3,7 +3,7 @@ import pandas as pd
 from defs.classes import prob_classes
 
 
-nomes_italo_continental = pd.read_csv("bot/arquivos/nomes_italo_continental.csv")
+nomes_italo_continental = pd.read_csv("bot/arquivos/csv/nomes_italo_continental.csv")
 
 def merc_void():
     nome = random.choice(nomes_italo_continental['Personagem'])
@@ -21,7 +21,7 @@ def merc_void():
             maior = chave
             break
         
-    classe = prob_classes("Ladino", maior) 
+    classe = prob_classes("Ladino", maior)
 
     dados = {"Nome": nome, "PC": pc,"Classe": classe,"Atributos": atributos1} 
     return dados

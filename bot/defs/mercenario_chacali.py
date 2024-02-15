@@ -3,7 +3,7 @@ import pandas as pd
 from defs.classes import prob_classes
 
 
-nomes_arabes = pd.read_csv("bot/arquivos/nomes_arabes.csv")
+nomes_arabes = pd.read_csv("bot/arquivos/csv/nomes_arabes.csv")
 
 
 def merc_chacalico():

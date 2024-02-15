@@ -3,7 +3,7 @@ import pandas as pd
 from defs.classes import prob_classes
 
 
-nomes_indiano_rpg = pd.read_csv("bot/arquivos/nomes_indiano_rpg.csv")
+nomes_indiano_rpg = pd.read_csv("bot/arquivos/csv/nomes_indiano_rpg.csv")
 
 def merc_simio():
     nome = random.choice(nomes_indiano_rpg['Personagem'])

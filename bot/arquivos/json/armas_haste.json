@@ -1,0 +1,128 @@
+{
+    "arcos": [
+        {
+            "nome": "Arco do Rastreador",
+            "dano": "at\u00e9 1d4",
+            "peso": "(1uP)",
+            "tipo": "Penetrante/Haste",
+            "requisito": "Requer 1x Flecha Leve/M\u00e9dia ou Virote Leve/M\u00e9dio",
+            "habilidades": "- at\u00e9 10m de alcance sem decr\u00e9scimo.\n- Mecanismo Composto: pode atirar tanto muni\u00e7\u00e3o de bestas quanto de arcos.",
+            "durabilidade": "(4/4) dur.",
+            "slots": "(3/3) slots."
+        },
+        {
+            "nome": "Arco da Guarni\u00e7\u00e3o",
+            "dano": "at\u00e9 1d5",
+            "peso": "(1uP)",
+            "tipo": "Penetrante/Haste",
+            "requisito": "Requer 1x Muni\u00e7\u00e3o de Arco Leve ou M\u00e9dia",
+            "habilidades": "- at\u00e9 7m de alcance sem decr\u00e9scimo.\n- Atirador Perito: arma usada por soldados, ajuda a tentativa de remunir antecipadamente em (+1d2).",
+            "durabilidade": "(5/5) dur.",
+            "slots": "(3/3) slots."
+        },
+        {
+            "nome": "Arco Ingl\u00eas",
+            "dano": "at\u00e9 1d4",
+            "peso": "(1uP)",
+            "tipo": "Penetrante/Haste",
+            "requisito": "Requer 1x Flecha M\u00e9dia",
+            "habilidades": "- at\u00e9 12m de alcance sem decr\u00e9scimo.\n- Franco Atirador: devido \u00e0 grande longitude de seu arco, voc\u00ea consegue dobrar o alcance m\u00e1ximo quando gasta ao menos (1,5t) mirando concentrado no alvo (obs: seu disparo \u00e9 parab\u00f3lico).",
+            "durabilidade": "(4/4) dur.",
+            "slots": "(3/3) slots."
+        },
+        {
+            "nome": "Arco Curto",
+            "dano": "at\u00e9 1d3",
+            "peso": "(0.5uP)",
+            "tipo": "Penetrante/Haste",
+            "requisito": "Requer 1x Flecha Leve",
+            "habilidades": "- at\u00e9 10m de alcance sem decr\u00e9scimo.\n- \u00c1gil Manuseio: at\u00e9 o limite de 7m, adiciona (+1) na rolagem de acerto.",
+            "durabilidade": "(3/3) dur.",
+            "slots": "(3/3) slots."
+        },
+        {
+            "nome": "Arco Lamuriante",
+            "dano": "at\u00e9 1d4",
+            "peso": "(2uP)",
+            "tipo": "Penetrante/Haste",
+            "requisito": "Requer 1x Muni\u00e7\u00e3o de Arco",
+            "habilidades": "- at\u00e9 9m de alcance sem decr\u00e9scimo.\n- Lan\u00e7ador Pesado: devido um aro de metal, voc\u00ea consegue atirar flechas de classe Pesada.",
+            "durabilidade": "(6/6) dur.",
+            "slots": "(3/3) slots."
+        }
+    ],
+    "bestas": [
+        {
+            "nome": "Besta Vicinal",
+            "dano": "at\u00e9 1d3",
+            "peso": "(2uP)",
+            "tipo": "Penetrante/Haste",
+            "requisito": "Requer 1x Virote Leve",
+            "habilidades": "- at\u00e9 5m de alcance sem decr\u00e9scimo.\n- Arma Secund\u00e1ria: pode ser equipada em cintos ou coldres, sacada com (+1) e remunida com b\u00f4nus (-0.2)t de m\u00faltiplo de tempo.",
+            "durabilidade": "(5/5) dur.",
+            "slots": "(3/3) slots."
+        },
+        {
+            "nome": "Besta Torpe",
+            "dano": "at\u00e9 1d4",
+            "peso": "(3uP)",
+            "tipo": "Afiado/Haste",
+            "requisito": "Requer 1x Virote de Ca\u00e7a",
+            "habilidades": "- at\u00e9 9m de alcance sem decr\u00e9scimo.\n- Pren\u00fancio da Morte: atira a muni\u00e7\u00e3o em movimento serpenteado, penetrando prote\u00e7\u00e3o e aumentando o dano extra do multiplicador em at\u00e9 (1d5.10%) ou ignorando porcentagem de multiplicador protetivo em at\u00e9 (1d10%).",
+            "durabilidade": "(6/6) dur.",
+            "slots": "(3/3) slots."
+        },
+        {
+            "nome": "Besta Individual",
+            "dano": "at\u00e9 1d4",
+            "peso": "(2uP)",
+            "tipo": "Penetrante/Haste",
+            "requisito": "Requer 1x Virote Leve ou M\u00e9dio",
+            "habilidades": "- at\u00e9 10m de alcance sem decr\u00e9scimo.\n- Roldana Leve: tentativas de remunir antecipado t\u00eam b\u00f4nus de (+1).",
+            "durabilidade": "(6/6) dur.",
+            "slots": "(3/3) slots."
+        },
+        {
+            "nome": "Besta Pesada",
+            "dano": "at\u00e9 1d5",
+            "peso": "(6uP)",
+            "tipo": "Penetrante/Haste",
+            "requisito": "Requer 1x Virote M\u00e9dio",
+            "habilidades": "- at\u00e9 5m de alcance sem decr\u00e9scimo.\n- Mecanismo de Tra\u00e7\u00e3o: um compartimento lateral guarda (1) muni\u00e7\u00e3o a mais que pode ser remunida automaticamente (gasta o dobro para realimentar o compartimento).",
+            "durabilidade": "(8/8) dur.",
+            "slots": "(3/3) slots."
+        }
+    ],
+    "balestra": [
+        {
+            "nome": "Lan\u00e7ador \u00cdrio",
+            "dano": "at\u00e9 1d6",
+            "peso": "(6uP)",
+            "tipo": "Penetrante/Haste",
+            "requisito": "Requer 1x Muni\u00e7\u00e3o de Haste Gen\u00e9rica",
+            "habilidades": "- at\u00e9 8m de alcance sem decr\u00e9scimo.\n- O Adapt\u00e1vel: pode usar qualquer muni\u00e7\u00e3o de Haste.",
+            "durabilidade": "(10/10) dur.",
+            "slots": "(3/3) slots."
+        },
+        {
+            "nome": "Ballista",
+            "dano": "at\u00e9 1d10",
+            "peso": "(12uP)",
+            "tipo": "Misto(60af/40pen)/Haste",
+            "requisito": "Requer 1x Virote Pesado",
+            "habilidades": "- at\u00e9 10m de alcance sem decr\u00e9scimo.\n- (+1)t adicional para remunir.\n- Destruidor de Fortes: destr\u00f3i a durabilidade de constru\u00e7\u00f5es e barricadas com b\u00f4nus (+5), caso usado contra uma criatura, o mesmo modificador se aplica contra prote\u00e7\u00e3o (1:1), al\u00e9m de realizar rolagem de impacto de dificuldade G2.",
+            "durabilidade": "(15/15) dur.",
+            "slots": "(3/3) slots."
+        },
+        {
+            "nome": "Repetidor Qu\u00edmico",
+            "dano": "at\u00e9 1d3",
+            "peso": "(8uP)",
+            "tipo": "Penetrante/Haste",
+            "requisito": "Requer 1x Virote Leve Modificado e 1x Coquetel Inflam\u00e1vel",
+            "habilidades": "- at\u00e9 6m de alcance sem decr\u00e9scimo.\n- Primor Cient\u00edfico: sua arma tem um ejetor flamejante na ponta da lan\u00e7a, causando (+1d2) de dano Elemental (1) de FLARIAE.",
+            "durabilidade": "(8/8) dur.",
+            "slots": "(3/3) slots."
+        }
+    ]
+}

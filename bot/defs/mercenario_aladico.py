@@ -1,9 +1,10 @@
 import random
 import pandas as pd
-from defs.classes import prob_classes
+from classes import prob_classes
+from armas import armas_merc
 
 
-nomes_romanos = pd.read_csv("bot/arquivos/nomes_romanos.csv")
+nomes_romanos = pd.read_csv("bot/arquivos/csv/nomes_romanos.csv")
 
 
 def merc_aladico():
@@ -13,18 +14,26 @@ def merc_aladico():
 
     
     pc = sum(atributos1.values()) /40
-        
-       
+    
     maior_valor = max((atributos1["vig"], atributos1["des"], atributos1["for"], atributos1["atl"], atributos1["eva"]))
 
-    for chave, valor in atributos1.items():
-        if valor == maior_valor:
-            maior = chave
-            break
-        
-    classe = prob_classes("Lanceiro", maior) 
+    maior_valor2 = max((atributos1["des"], atributos1["for"], atributos1["atl"], atributos1["eva"]))
 
-    dados = {"Nome": nome, "PC": pc,"Classe": classe,"Atributos": atributos1} 
+    for chave, valor in atributos1.items():
+        for chave, valor in atributos1.items():
+            if valor == maior_valor:
+                maior = chave
+                break         
+        if valor == maior_valor2:
+                maior_arma = chave
+                break
+    
+    classe = prob_classes("Lanceiro", maior)
+
+    equipamento = armas_merc(maior_arma)
+
+    dados = {"Nome": nome, "PC": pc,"Classe": classe,"Atributos": atributos1, "Equipamento": equipamento}
+    
     return dados
 
 def player_aladico():

@@ -3,7 +3,7 @@ import pandas as pd
 from defs.classes import prob_classes
 
 
-nomes_eslavos = pd.read_csv("bot/arquivos/nomes_eslavos.csv")
+nomes_eslavos = pd.read_csv("bot/arquivos/csv/nomes_eslavos.csv")
 
 
 def merc_tritao():
