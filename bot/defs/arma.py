@@ -81,8 +81,7 @@ def armas_merc(maior):
         elif (maior == "atl"):
             arma = dados_armas[maior]
         else:
-            escolha2 = random.choice("for")
-            arma = random.choice(dados_armas[escolha2])
+            arma = random.choice(dados_armas["for"])
 
 
         if (random.randint(1, 10) >= 9):

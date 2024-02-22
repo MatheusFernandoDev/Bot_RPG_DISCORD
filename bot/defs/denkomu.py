@@ -22,7 +22,7 @@ def merc_denko():
         
     classe = prob_classes("Cavaleiro", maior_valor) 
 
-    equipamentos = armas_merc(maior_valor2)
+    equipamento = armas_merc(maior_valor2)
 
     dados = {"Nome": nome, "PC": pc,"Classe": classe,"Atributos": atributos1, "Equipamento": equipamento}
      

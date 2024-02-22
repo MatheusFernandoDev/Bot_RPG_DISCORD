@@ -41,65 +41,43 @@ async def on_ready():
 # Rolagem mercenario
 @bot.command()
 async def mercenario(ctx):
+  
+    racas_funcoes = {
+    "Vampirico": merc_vamp,
+    "Arqueonte": merc_arque,
+    "Elfo": merc_elfo,
+    "Símio": merc_simio,
+    "Orc": merc_orc,
+    "Magmamir": merc_magma,
+    "Anão": merc_anao,
+    "Voidling": merc_void,
+    "Troll": merc_troll,
+    "Lupínico": merc_lupin,
+    "Taurus": merc_tauru,
+    "Leonine": merc_leonine,
+    "Felínio": merc_felinio,
+    "Chacálico": merc_chacalico,
+    "Javálion": merc_javalion,
+    "Reptilio": merc_reptilio,
+    "Ursárion": merc_ursa,
+    "Denkomu": merc_denko,
+    "Aládico": merc_aladico,
+    "Nivólio": merc_nivolio,
+    "Humano": merc_humano
+}
+    
+    # Escolha aleatória de uma raça
+    raca_escolhida = random.choice(list(racas_funcoes.keys()))
 
- 
-    racas = [
-        "Vampirico", "Arqueonte", "Elfo", "Símio", "Orc", "Magmamir", "Anão", "Voidling", "Troll", "Lupínico","Taurus", "Leonine", "Felínio", "Chacálico", "Javálion", "Reptilio", "Ursárion","Denkomu", "Aládico", "Nivólio", "Humano"
-        ]
-    
-    
-    raç = random.choice(racas)
-    
+    # Chama a função correspondente à raça escolhida
+    dados = racas_funcoes[raca_escolhida]()
 
-    if raç == "Vampirico":
-        dados = merc_vamp()  
-    elif raç == "Arqueonte":
-        dados = merc_arque()
-    elif raç == "Elfo":
-        dados = merc_elfo() 
-    elif raç == "Símio":
-        dados = merc_simio()   
-    elif raç == "Orc":
-        dados = merc_orc()
-    elif raç == "Magmamir":
-        dados = merc_magma()
-    elif raç == "Anão":
-        dados = merc_anao()
-    elif raç == "Voidling":
-        dados = merc_void()
-    elif raç == "Troll":
-        dados = merc_troll()
-    elif raç == "Lupínico": 
-        dados = merc_lupin()
-    elif raç == "Taurus":
-        dados = merc_tauru()
-    elif raç == "Leonine":
-        dados = merc_leonine()  
-    elif raç == "Felínio":
-        dados = merc_felinio()
-    elif raç == "Chacálico":
-        dados = merc_chacalico()
-    elif raç == "Javálion":
-        dados = merc_javalion()
-    elif raç == "Reptilio":
-        dados = merc_reptilio()
-    elif raç == "Ursárion":
-        dados = merc_ursa()
-    elif raç == "Denkomu":
-        dados = merc_denko()
-    elif raç == "Aládico":
-        dados = merc_aladico()
-    elif raç == "Nivólio":
-        dados = merc_nivolio()
-    else:
-        dados = merc_humano()
-    
     channel = (ctx.channel)
     
     await ctx.message.delete()
     print(dados)
 
-    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {raç:<10} PC: {dados["PC"]}  Classe:  {dados["Classe"]}\n'
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {raca_escolhida:<10} PC: {dados["PC"]}  Classe:  {dados["Classe"]}\n'
       f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
       f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}\n"
       f"\nProteção: \n{escolha_armaduras():<4}")
@@ -416,4 +394,4 @@ async def humano(ctx):
       f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
       f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
-bot.run("")
+bot.run("MTEzMDE1OTEwMTIyMjA2MDExMg.GzPFy6.YA9gC3-cJNxQVzGkvguZ5OGXSIHERaBgJqyBps")
