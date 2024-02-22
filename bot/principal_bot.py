@@ -90,8 +90,13 @@ async def vampirico(ctx):
     
     
     channel = (ctx.channel)
+    while True:
+        dados = player_vamp()
 
-    dados = player_vamp()
+        if (dados["PC"] >= 1.7):
+            break
+        else:
+            continue
 
     await ctx.message.delete()
 
@@ -104,8 +109,14 @@ async def vampirico(ctx):
 async def arqueonte(ctx):   
 
     channel = (ctx.channel)    
-    
-    dados = player_arque()
+
+    while True:
+        dados = player_arque()
+
+        if (dados["PC"] >= 1.7):
+            break
+        else:
+            continue
 
     await ctx.message.delete()
         
@@ -119,7 +130,13 @@ async def elfo(ctx):
     
     channel = (ctx.channel)
 
-    dados = player_elfo()
+    while True:
+        dados = player_elfo()
+
+        if (dados["PC"] >= 1.7):
+            break
+        else:
+            continue
 
     await ctx.message.delete()
 
@@ -130,11 +147,15 @@ async def elfo(ctx):
 @bot.command()
 async def simio(ctx):   
     
-    
     channel = (ctx.channel)
 
+    while True:
+        dados = player_simio()
 
-    dados = player_simio()
+        if (dados["PC"] >= 1.7):
+            break
+        else:
+            continue
 
     await ctx.message.delete()
         
@@ -148,7 +169,13 @@ async def orc(ctx):
    
     channel = (ctx.channel)
 
-    dados = player_orc()
+    while True:
+        dados = player_orc()
+
+        if (dados["PC"] >= 1.7):
+            break
+        else:
+            continue
 
     await ctx.message.delete()
         
@@ -161,8 +188,14 @@ async def orc(ctx):
 async def magmamir(ctx):   
     
     channel = (ctx.channel)
+    
+    while True:
+        dados = player_magma()
 
-    dados = player_magma()
+        if (dados["PC"] >= 1.7):
+            break
+        else:
+            continue
 
     await ctx.message.delete()
         
@@ -176,7 +209,13 @@ async def anao(ctx):
     
     channel = (ctx.channel)
 
-    dados = player_anao()
+    while True:
+        dados = player_anao()
+
+        if (dados["PC"] >= 1.7):
+            break
+        else:
+            continue
 
     await ctx.message.delete()
         
@@ -189,8 +228,14 @@ async def anao(ctx):
 async def voidling(ctx):   
    
     channel = (ctx.channel)
+ 
+    while True:
+        dados = player_void() 
 
-    dados = player_void()
+        if (dados["PC"] >= 1.7):
+            break
+        else:
+            continue
 
     await ctx.message.delete()
         
@@ -203,8 +248,14 @@ async def voidling(ctx):
 async def troll(ctx):   
 
     channel = (ctx.channel)
+  
+    while True:
+        dados = player_troll()
 
-    dados = player_troll()
+        if (dados["PC"] >= 1.7):
+            break
+        else:
+            continue
 
     await ctx.message.delete()
         
@@ -218,7 +269,13 @@ async def lupinico(ctx):
 
     channel = (ctx.channel)
 
-    dados = player_lupin()
+    while True:
+        dados = player_lupin()
+
+        if (dados["PC"] >= 1.7):
+            break
+        else:
+            continue
 
     await ctx.message.delete()
         
@@ -231,8 +288,14 @@ async def lupinico(ctx):
 async def taurus(ctx):   
    
     channel = (ctx.channel)
+ 
+    while True:
+        dados = player_tauru()
 
-    dados = player_tauru()
+        if (dados["PC"] >= 1.7):
+            break
+        else:
+            continue
 
     await ctx.message.delete()
         
@@ -246,7 +309,13 @@ async def leonine(ctx):
     
     channel = (ctx.channel)
 
-    dados = player_leonine()
+    while True:
+        dados = player_leonine()
+
+        if (dados["PC"] >= 1.7):
+            break
+        else:
+            continue
 
     await ctx.message.delete()
         
@@ -259,8 +328,14 @@ async def leonine(ctx):
 async def felinio(ctx):   
     
     channel = (ctx.channel)
+    
+    while True:
+        dados = player_felinio()
 
-    dados = player_felinio()
+        if (dados["PC"] >= 1.7):
+            break
+        else:
+            continue
 
     await ctx.message.delete()
         
@@ -274,7 +349,13 @@ async def chacalico(ctx):
     
     channel = (ctx.channel)
 
-    dados = player_chacalico()
+    while True:
+        dados = player_chacalico()
+
+        if (dados["PC"] >= 1.7):
+            break
+        else:
+            continue
 
     await ctx.message.delete()
         
@@ -288,7 +369,13 @@ async def javalion(ctx):
     
     channel = (ctx.channel)
 
-    dados = player_javalion()
+    while True:
+        dados = player_javalion()
+
+        if (dados["PC"] >= 1.7):
+            break
+        else:
+            continue
 
     await ctx.message.delete()
         
@@ -301,8 +388,14 @@ async def javalion(ctx):
 async def reptilio(ctx):   
     
     channel = (ctx.channel)
+    
+    while True:
+        dados = player_reptilio()
 
-    dados = player_reptilio()
+        if (dados["PC"] >= 1.7):
+            break
+        else:
+            continue
 
     await ctx.message.delete()
         
@@ -315,8 +408,14 @@ async def reptilio(ctx):
 async def ursarion(ctx):   
     
     channel = (ctx.channel)
+    
+    while True:
+        dados = player_ursa()
 
-    dados = player_ursa()
+        if (dados["PC"] >= 1.7):
+            break
+        else:
+            continue
 
     await ctx.message.delete()    
         
@@ -330,7 +429,13 @@ async def tritao(ctx):
     
     channel = (ctx.channel)
 
-    dados = player_tritao()
+    while True:
+        dados = player_tritao()
+
+        if (dados["PC"] >= 1.7):
+            break
+        else:
+            continue
 
     await ctx.message.delete()
         
@@ -344,7 +449,13 @@ async def denkomu(ctx):
     
     channel = (ctx.channel)
 
-    dados = player_denko()
+    while True:
+        dados = player_denko()
+
+        if (dados["PC"] >= 1.7):
+            break
+        else:
+            continue
 
     await ctx.message.delete()
         
@@ -358,7 +469,13 @@ async def aladico(ctx):
    
     channel = (ctx.channel)
 
-    dados = player_aladico()
+    while True:
+        dados = player_aladico()
+
+        if (dados["PC"] >= 1.7):
+            break
+        else:
+            continue
 
     await ctx.message.delete()
         
@@ -372,7 +489,13 @@ async def nivolio(ctx):
     
     channel = (ctx.channel)
 
-    dados =player_nivolio()
+    while True:
+        dados =player_nivolio()
+
+        if (dados["PC"] >= 1.7):
+            break
+        else:
+            continue
 
     await ctx.message.delete()
         
@@ -386,7 +509,13 @@ async def humano(ctx):
     
     channel = (ctx.channel)
 
-    dados = player_humano()
+    while True:
+        dados = player_humano()
+
+        if (dados["PC"] >= 1.7):
+            break
+        else:
+            continue
 
     await ctx.message.delete()
         
@@ -394,4 +523,4 @@ async def humano(ctx):
       f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
       f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
-bot.run("MTEzMDE1OTEwMTIyMjA2MDExMg.GzPFy6.YA9gC3-cJNxQVzGkvguZ5OGXSIHERaBgJqyBps")
+bot.run("")

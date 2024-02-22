@@ -27,17 +27,12 @@ def merc_vamp():
         return dados
         
 def player_vamp():
-    while True:
-        nome = random.choice(nomes_alemaes['Personagem'])
+    
+    nome = random.choice(nomes_alemaes['Personagem'])
 
-        atributos = {"for": random.randint(1,10) + random.randint(1,6), "vig": random.randint(1,10), "des": random.randint(1,10), "atl": random.randint(1,10), "eva": random.randint(1,10), "sab": random.randint(1,10), "arc": random.randint(1,10) + random.randint(1,6), "car": random.randint(1,10)}
+    atributos = {"for": random.randint(1,10) + random.randint(1,6), "vig": random.randint(1,10), "des": random.randint(1,10), "atl": random.randint(1,10), "eva": random.randint(1,10), "sab": random.randint(1,10), "arc": random.randint(1,10) + random.randint(1,6), "car": random.randint(1,10)}
         
-        pc = sum(atributos.values()) /40
-
-        if(pc >= 1.7):
-             break
-        else:
-             continue
+    pc = sum(atributos.values()) /40
 
     dados = {"Nome": nome, "PC": pc,"Atributos": atributos} 
     
