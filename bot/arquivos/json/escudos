@@ -1,44 +1,20 @@
 [
     {
-        "nome": "Escudo Ogival",
-        "peso": "(5uP)",
-        "dimens\u00f5es": "(50cm de largura, 80cm de altura)",
-        "durabilidade": "(10/10) dur.",
-        "slots": "(3/3 slots)"
+        "nome": "Escudo Ogival (5uP)  (50cm de largura, 80cm de altura) (10/10) dur. (3/3 slots)"
+    },   
+    {
+        "nome": "Escudo do Cavaleiro (5uP)  (40cm no bojo/50cm de largura, 1m de altura) (12/12) dur. (3/3 slots)"
     },
     {
-        "nome": "Escudo do Cavaleiro",
-        "peso": "(5uP)",
-        "dimens\u00f5es": "(40cm no bojo/50cm de largura, 1m de altura)",
-        "durabilidade": "(12/12) dur.",
-        "slots": "(3/3 slots)"
+        "nome": "Broquel Escandinavo (3uP)  (50cm de raio) (10/10) dur. (3/3 slots)"
     },
     {
-        "nome": "Broquel Escandinavo",
-        "peso": "(3uP)",
-        "dimens\u00f5es": "(50cm de raio)",
-        "durabilidade": "(10/10) dur.",
-        "slots": "(3/3 slots)"
+        "nome": "\u00c9gide de Bronze (5uP)  (55cm de largura, 70cm de altura) Prontid\u00e3o: pode guardar uma arma de UMA M\u00c3O no escudo. (12/12) dur. (3/3 slots)"
     },
     {
-        "nome": "\u00c9gide de Bronze",
-        "peso": "(5uP)",
-        "dimens\u00f5es": "(55cm de largura, 70cm de altura) Prontid\u00e3o: pode guardar uma arma de UMA M\u00c3O no escudo.",
-        "durabilidade": "(12/12) dur.",
-        "slots": "(3/3 slots)"
+        "nome": "Escudo do Legion\u00e1rio (6uP)  (50cm largura, 1m de altura) (15/15) dur.(3/3 slots)"
     },
     {
-        "nome": "Escudo do Legion\u00e1rio",
-        "peso": "(6uP)",
-        "dimens\u00f5es": "(50cm largura, 1m de altura)",
-        "durabilidade": "(15/15) dur.",
-        "slots": "(3/3 slots)"
-    },
-    {
-        "nome": "Escudo do Tirol\u00eas",
-        "peso": "(5uP)",
-        "dimens\u00f5es": "(40cm L, 30cm A)",
-        "durabilidade": "(10/10) dur.",
-        "slots": "(3/3 slots)"
+        "nome": "Escudo do Tirol\u00eas (5uP)   (40cm L, 30cm A) (10/10) dur. (3/3 slots)"
     }
 ]

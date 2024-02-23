@@ -31,12 +31,7 @@ def armas_merc(maior):
 
         requisito_escudo = random.randint(1, 10)
 
-        if (requisito_escudo >= 9):
-            lista_equipamentos = [arma, escudo_merc()]
-        
-        else:
-
-            lista_equipamentos = [arma]
+        lista_equipamentos = {"Arma": arma}
 
     # Armas Pesadas
     elif (escolha ==  pericias[1]):
@@ -49,12 +44,7 @@ def armas_merc(maior):
 
         requisito_escudo = random.randint(1, 10)
 
-        if (requisito_escudo >= 9):
-            lista_equipamentos = [arma, escudo_merc()]
-        
-        else:
-
-            lista_equipamentos = [arma]
+        lista_equipamentos = {"Arma": arma}
     
     # Armas de haste
     elif (escolha ==  pericias[2]):
@@ -67,7 +57,8 @@ def armas_merc(maior):
 
         arma = random.choice(dados_armas[tipo])
 
-        lista_equipamentos = [arma]
+        lista_equipamentos = {"Arma": arma}
+
     # Armas de Contusão
     elif (escolha == pericias[3]):
 
@@ -83,13 +74,7 @@ def armas_merc(maior):
         else:
             arma = random.choice(dados_armas["for"])
 
-
-        if (random.randint(1, 10) >= 9):
-            lista_equipamentos = [arma, escudo_merc()]
-        
-        else:
-
-            lista_equipamentos = [arma]
+        lista_equipamentos = {"Arma": arma}
 
     # Armas Longas
     else:
@@ -100,14 +85,7 @@ def armas_merc(maior):
         
         arma = random.choice(dados_armas[maior])
 
-        requisito_escudo = random.randint(1, 10)
-
-        if (requisito_escudo >= 9):
-            lista_equipamentos = [arma, escudo_merc()]
-        
-        else:
-
-            lista_equipamentos = [arma]
+        lista_equipamentos = {"Arma": arma}
     
     return  lista_equipamentos
 

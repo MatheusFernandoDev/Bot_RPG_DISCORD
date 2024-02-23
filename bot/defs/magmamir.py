@@ -3,13 +3,14 @@ import pandas as pd
 from defs.classe import prob_classes
 from defs.arma import armas_merc
 from defs.maior_valor_dic import chave_maior_valor
+from defs.atributos import rolagem_atributos
 
 nomes = pd.read_csv("bot/arquivos/csv/nomes_rpg.csv")
 
 def merc_magma():
     nome = random.choice(nomes['Personagem'])
 
-    atributos1 = {"for": random.randint(1,8), "des": random.randint(1,8) , "atl": random.randint(1,8), "eva": random.randint(1,8), "vig": random.randint(1,8) + random.randint(1,3), "sab": random.randint(1,8), "arc": random.randint(1,8) + random.randint(1,3), "car": random.randint(1,8)}
+    atributos1 = rolagem_atributos(8, 3, "vig", "arc")
 
     
     pc = sum(atributos1.values()) /40
@@ -30,7 +31,7 @@ def merc_magma():
 def player_magma():
     nome = random.choice(nomes['Personagem'])
 
-    atributos = {"for": random.randint(1,10), "vig": random.randint(1,10) + random.randint(1,6), "des": random.randint(1,10), "atl": random.randint(1,10), "eva": random.randint(1,10), "sab": random.randint(1,10), "arc": random.randint(1,10) + random.randint(1,6), "car": random.randint(1,10)}
+    atributos = rolagem_atributos(10, 6, "vig", "arc")
 
     pc = sum(atributos.values()) /40
 

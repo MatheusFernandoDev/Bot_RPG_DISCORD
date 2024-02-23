@@ -3,6 +3,7 @@ import pandas as pd
 from defs.classe import prob_classes
 from defs.arma import armas_merc
 from defs.maior_valor_dic import chave_maior_valor
+from defs.atributos import rolagem_atributos
 
 nomes_abisal = pd.read_csv("bot/arquivos/csv/nomes_abisal.csv")
 
@@ -10,7 +11,7 @@ nomes_abisal = pd.read_csv("bot/arquivos/csv/nomes_abisal.csv")
 def merc_denko():
     nome = random.choice(nomes_abisal['Personagem'])
 
-    atributos1 = {"for": random.randint(1,8) , "des": random.randint(1,8) + random.randint(1,3), "atl": random.randint(1,8), "eva": random.randint(1,8), "vig": random.randint(1,8) + random.randint(1,3), "sab": random.randint(1,8), "arc": random.randint(1,8), "car": random.randint(1,8)}
+    atributos1 = rolagem_atributos(8, 3, "des", "vig")
 
     
     pc = sum(atributos1.values()) /40
@@ -31,7 +32,7 @@ def merc_denko():
 def player_denko():
     nome = random.choice(nomes_abisal['Personagem'])
 
-    atributos = {"for": random.randint(1,10), "vig": random.randint(1,10) + random.randint(1,6), "des": random.randint(1,10) + random.randint(1,6), "atl": random.randint(1,10), "eva": random.randint(1,10), "sab": random.randint(1,10), "arc": random.randint(1,10), "car": random.randint(1,10)}
+    atributos = rolagem_atributos(10, 6, "des", "vig")
 
     pc = sum(atributos.values()) /40
 
