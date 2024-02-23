@@ -1,7 +1,4 @@
-
 import random
-
-
 from defs.vampirico import merc_vamp, player_vamp
 from defs.arqueonte import merc_arque, player_arque
 from defs.elfo import merc_elfo, player_elfo
@@ -24,7 +21,15 @@ from defs.denkomu import merc_denko, player_denko
 from defs.aladico import merc_aladico, player_aladico
 from defs.nivolio import merc_nivolio, player_nivolio
 from defs.humano import merc_humano, player_humano
+from defs.demonio import merc_demonio, player_demonio
+from defs.draconico import merc_draconico, player_draconico
+from defs.gnomo import merc_gnomo, player_gnomo
+from defs.raposaceo import merc_raposaceo, player_raposaceo
+from defs.halfling import merc_halfling, player_halfling
+from defs.ermelico import merc_ermelico, player_ermelico
 from defs.proteção import escolha_armaduras
+from defs.arma import escudo_merc
+from arquivos.config import TOKEN
 from discord.ext import commands
 import discord
 
@@ -37,6 +42,17 @@ bot = commands.Bot(command_prefix='/', intents=intents)
 @bot.event
 async def on_ready():
     print(f"{bot.user} está online")
+
+# Mostra os comandos do bot
+@bot.command()
+async def comandos(ctx):
+    channel = (ctx.channel)
+    
+    await ctx.message.delete()
+
+    await channel.send(f"Hey! Aqui vem um Bot irado para turbinar o seu RPG. Ele vai rolar dados e soltar informações incríveis sobre personagens de todas as raças - Vampiros, Elfos, Orcs... você escolhe!"
+    "\nTem uns comandos maneiros que você pode usar, tipo '/mercenario' pra chamar um mercenário pro seu time e enfrentar as aventuras mais sinistras!"
+    "\nE tem mais, se quiser criar a ficha rápido, só usar '/orc' ou trocar a raça na frente da barra. Fácil, né? Vem com a gente desbravar essas terras mágicas!")
 
 # Rolagem mercenario
 @bot.command()
@@ -63,14 +79,30 @@ async def mercenario(ctx):
     "Denkomu": merc_denko,
     "Aládico": merc_aladico,
     "Nivólio": merc_nivolio,
-    "Humano": merc_humano
+    "Humano": merc_humano,
+    "Demonio": merc_demonio,
+    "Dracônico": merc_draconico,
+    "Gnomo": merc_gnomo,
+    "Raposáceo": merc_raposaceo,
+    "Halfling": merc_halfling,
+    "Ermélico": merc_ermelico
 }
     
     # Escolha aleatória de uma raça
     raca_escolhida = random.choice(list(racas_funcoes.keys()))
 
     # Chama a função correspondente à raça escolhida
-    dados = racas_funcoes[raca_escolhida]()
+    while True:
+        dados = racas_funcoes[raca_escolhida]()
+
+        if (dados["PC"] >= 1.2):
+            break
+        else:
+            continue
+
+    if(random.randint(0,100) >= 90):
+        escudo = escudo_merc()
+           
 
     channel = (ctx.channel)
     
@@ -80,20 +112,19 @@ async def mercenario(ctx):
     await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {raca_escolhida:<10} PC: {dados["PC"]}  Classe:  {dados["Classe"]}\n'
       f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
       f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}\n"
-      f"\nProteção: \n{escolha_armaduras():<4}")
-      #f"Nome: {dados['Equipamento']['nome']} Dano: {dados['Equipamento']['dano']} {dados['Equipamento']['tipo']} {dados['Equipamento']['peso']}")
-    
-       
+      f"\nProteção: \n{escolha_armaduras():<4} \nEquipamento:"
+      f"\nNome: {dados['Equipamento']['Arma']['nome']} Dano: {dados['Equipamento']['Arma']['dano']} {dados['Equipamento']['Arma']['tipo']} {dados['Equipamento']['Arma']['peso']} {dados['Equipamento']['Arma']['habilidades']}")    
+           
 #  Rolagem Vampirico
 @bot.command()
 async def vampirico(ctx):   
     
-    
     channel = (ctx.channel)
+    
     while True:
         dados = player_vamp()
 
-        if (dados["PC"] >= 1.7):
+        if (dados["PC"] >= 1.3):
             break
         else:
             continue
@@ -113,7 +144,7 @@ async def arqueonte(ctx):
     while True:
         dados = player_arque()
 
-        if (dados["PC"] >= 1.7):
+        if (dados["PC"] >= 1.3):
             break
         else:
             continue
@@ -133,7 +164,7 @@ async def elfo(ctx):
     while True:
         dados = player_elfo()
 
-        if (dados["PC"] >= 1.7):
+        if (dados["PC"] >= 1.3):
             break
         else:
             continue
@@ -152,7 +183,7 @@ async def simio(ctx):
     while True:
         dados = player_simio()
 
-        if (dados["PC"] >= 1.7):
+        if (dados["PC"] >= 1.3):
             break
         else:
             continue
@@ -172,7 +203,7 @@ async def orc(ctx):
     while True:
         dados = player_orc()
 
-        if (dados["PC"] >= 1.7):
+        if (dados["PC"] >= 1.3):
             break
         else:
             continue
@@ -192,7 +223,7 @@ async def magmamir(ctx):
     while True:
         dados = player_magma()
 
-        if (dados["PC"] >= 1.7):
+        if (dados["PC"] >= 1.3):
             break
         else:
             continue
@@ -212,7 +243,7 @@ async def anao(ctx):
     while True:
         dados = player_anao()
 
-        if (dados["PC"] >= 1.7):
+        if (dados["PC"] >= 1.3):
             break
         else:
             continue
@@ -252,7 +283,7 @@ async def troll(ctx):
     while True:
         dados = player_troll()
 
-        if (dados["PC"] >= 1.7):
+        if (dados["PC"] >= 1.3):
             break
         else:
             continue
@@ -272,7 +303,7 @@ async def lupinico(ctx):
     while True:
         dados = player_lupin()
 
-        if (dados["PC"] >= 1.7):
+        if (dados["PC"] >= 1.3):
             break
         else:
             continue
@@ -292,7 +323,7 @@ async def taurus(ctx):
     while True:
         dados = player_tauru()
 
-        if (dados["PC"] >= 1.7):
+        if (dados["PC"] >= 1.3):
             break
         else:
             continue
@@ -312,7 +343,7 @@ async def leonine(ctx):
     while True:
         dados = player_leonine()
 
-        if (dados["PC"] >= 1.7):
+        if (dados["PC"] >= 1.3):
             break
         else:
             continue
@@ -332,7 +363,7 @@ async def felinio(ctx):
     while True:
         dados = player_felinio()
 
-        if (dados["PC"] >= 1.7):
+        if (dados["PC"] >= 1.3):
             break
         else:
             continue
@@ -352,7 +383,7 @@ async def chacalico(ctx):
     while True:
         dados = player_chacalico()
 
-        if (dados["PC"] >= 1.7):
+        if (dados["PC"] >= 1.3):
             break
         else:
             continue
@@ -372,7 +403,7 @@ async def javalion(ctx):
     while True:
         dados = player_javalion()
 
-        if (dados["PC"] >= 1.7):
+        if (dados["PC"] >= 1.3):
             break
         else:
             continue
@@ -392,7 +423,7 @@ async def reptilio(ctx):
     while True:
         dados = player_reptilio()
 
-        if (dados["PC"] >= 1.7):
+        if (dados["PC"] >= 1.3):
             break
         else:
             continue
@@ -412,14 +443,14 @@ async def ursarion(ctx):
     while True:
         dados = player_ursa()
 
-        if (dados["PC"] >= 1.7):
+        if (dados["PC"] >= 1.3):
             break
         else:
             continue
 
     await ctx.message.delete()    
         
-    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Denko":<10} PC: {dados["PC"]}\n'
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Ursárion":<10} PC: {dados["PC"]}\n'
       f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
       f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
@@ -432,7 +463,7 @@ async def tritao(ctx):
     while True:
         dados = player_tritao()
 
-        if (dados["PC"] >= 1.7):
+        if (dados["PC"] >= 1.3):
             break
         else:
             continue
@@ -452,7 +483,7 @@ async def denkomu(ctx):
     while True:
         dados = player_denko()
 
-        if (dados["PC"] >= 1.7):
+        if (dados["PC"] >= 1.3):
             break
         else:
             continue
@@ -472,7 +503,7 @@ async def aladico(ctx):
     while True:
         dados = player_aladico()
 
-        if (dados["PC"] >= 1.7):
+        if (dados["PC"] >= 1.3):
             break
         else:
             continue
@@ -492,7 +523,7 @@ async def nivolio(ctx):
     while True:
         dados =player_nivolio()
 
-        if (dados["PC"] >= 1.7):
+        if (dados["PC"] >= 1.3):
             break
         else:
             continue
@@ -512,7 +543,7 @@ async def humano(ctx):
     while True:
         dados = player_humano()
 
-        if (dados["PC"] >= 1.7):
+        if (dados["PC"] >= 1.3):
             break
         else:
             continue
@@ -523,4 +554,125 @@ async def humano(ctx):
       f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
       f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
 
-bot.run("")
+#  Rolagem Demônico
+@bot.command()
+async def demonio(ctx):   
+   
+    channel = (ctx.channel)
+ 
+    while True:
+        dados = player_demonio()
+
+        if (dados["PC"] >= 1.3):
+            break
+        else:
+            continue
+
+    await ctx.message.delete()
+        
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Demônio":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
+
+# Rolagem Dracônico    
+@bot.command()
+async def draconico(ctx):   
+   
+    channel = (ctx.channel)
+ 
+    while True:
+        dados = player_draconico()
+
+        if (dados["PC"] >= 1.3):
+            break
+        else:
+            continue
+
+    await ctx.message.delete()
+        
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Dracônico":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
+
+# Rolagem Gnomo
+@bot.command()
+async def gnomo(ctx):   
+   
+    channel = (ctx.channel)
+ 
+    while True:
+        dados = player_gnomo()
+
+        if (dados["PC"] >= 1.3):
+            break
+        else:
+            continue
+
+    await ctx.message.delete()
+        
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Gnomo":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
+
+# Rolagem Raposáceo
+@bot.command()
+async def raposaceo(ctx):   
+   
+    channel = (ctx.channel)
+ 
+    while True:
+        dados = player_raposaceo()
+
+        if (dados["PC"] >= 1.3):
+            break
+        else:
+            continue
+
+    await ctx.message.delete()
+        
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Raposáceo":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
+    
+# Rolagem Halfling    
+@bot.command()
+async def halfling(ctx):   
+   
+    channel = (ctx.channel)
+ 
+    while True:
+        dados = player_halfling()
+
+        if (dados["PC"] >= 1.3):
+            break
+        else:
+            continue
+
+    await ctx.message.delete()
+        
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Halfling":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
+
+# Rolagem Ermélico    
+@bot.command()
+async def ermelico(ctx):   
+   
+    channel = (ctx.channel)
+ 
+    while True:
+        dados = player_ermelico()
+
+        if (dados["PC"] >= 1.3):
+            break
+        else:
+            continue
+
+    await ctx.message.delete()
+        
+    await channel.send(f'{ctx.author.mention} \nNome: {dados["Nome"]:<10} Raça: {"Ermélico":<10} PC: {dados["PC"]}\n'
+      f"ARC: {dados['Atributos']['arc']:<4}  VIG: {dados['Atributos']['vig']:<4} DES: {dados['Atributos']['des']:<4} SAB: {dados['Atributos']['sab']:<4}\n"
+      f"FOR: {dados['Atributos']['for']:<4} ATL: {dados['Atributos']['atl']:<4} EVA: {dados['Atributos']['eva']:<4} CAR: {dados['Atributos']['car']:<4}")
+    
+
+bot.run(TOKEN)

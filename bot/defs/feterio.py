@@ -5,14 +5,12 @@ from defs.arma import armas_merc
 from defs.maior_valor_dic import chave_maior_valor
 from defs.atributos import rolagem_atributos
 
-nomes_centro_americanos = pd.read_csv("bot/arquivos/csv/nomes_centro_americanos.csv")
+nomes = pd.read_csv("bot/arquivos/csv/nomes_elficos_t.csv")
 
+def merc_feterio():
+    nome = random.choice(nomes['Personagem'])
 
-def merc_reptilio():
-    nome = random.choice(nomes_centro_americanos['Personagem'])
-
-    atributos1 = rolagem_atributos(8, 3, "eva", "vig")
-
+    atributos1 = {"for": random.randint(1,8) , "des": random.randint(1,8), "atl": random.randint(1,8), "eva": random.randint(1,8), "vig": random.randint(1,8), "sab": random.randint(1,8), "arc": random.randint(1,8) + random.randint(1, 3), "car": random.randint(1,8)}
     
     pc = sum(atributos1.values()) /40
         
@@ -29,10 +27,10 @@ def merc_reptilio():
     
     return dados
 
-def player_reptilio():
-    nome = random.choice(nomes_centro_americanos['Personagem'])
+def player_feterio():
+    nome = random.choice(nomes['Personagem'])
 
-    atributos = rolagem_atributos(10, 6, "eva", "vig")
+    atributos = {"for": random.randint(1,8) , "des": random.randint(1,8), "atl": random.randint(1,8), "eva": random.randint(1,8), "vig": random.randint(1,8), "sab": random.randint(1,8), "arc": random.randint(1,8), "car": random.randint(1,8)}
 
     pc = sum(atributos.values()) /40
 

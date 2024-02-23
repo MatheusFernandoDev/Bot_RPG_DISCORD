@@ -5,16 +5,14 @@ from defs.arma import armas_merc
 from defs.maior_valor_dic import chave_maior_valor
 from defs.atributos import rolagem_atributos
 
-nomes_polinesios = pd.read_csv("bot/arquivos/csv/nomes_polinesios.csv")
+nomes = pd.read_csv("bot/arquivos/csv/nomes_mesopotamicos.csv")
 
-def merc_elfo():
-    nome = random.choice(nomes_polinesios['Personagem'])
+def merc_draconico():
+    nome = random.choice(nomes['Personagem'])
 
-    atributos1 = rolagem_atributos(8, 3, "des", "sab")
+    atributos1 = {"for": random.randint(1,8) , "des": random.randint(1,8), "atl": random.randint(1,8), "eva": random.randint(1,8), "vig": random.randint(1,8), "sab": random.randint(1,8), "arc": random.randint(1,8), "car": random.randint(1,8)}
 
-    
-    pc = sum(atributos1.values()) /40
-        
+    pc = sum(atributos1.values()) /40  
        
     maior_valor = chave_maior_valor(atributos1, "for", "des", "atl", "eva", "vig")
 
@@ -28,10 +26,10 @@ def merc_elfo():
     
     return dados
 
-def player_elfo():
-    nome = random.choice(nomes_polinesios['Personagem'])
+def player_draconico():
+    nome = random.choice(nomes['Personagem'])
 
-    atributos = rolagem_atributos(10, 6, "des", "sab")
+    atributos = {"for": random.randint(1,8) , "des": random.randint(1,8), "atl": random.randint(1,8), "eva": random.randint(1,8), "vig": random.randint(1,8), "sab": random.randint(1,8), "arc": random.randint(1,8), "car": random.randint(1,8)}
 
     pc = sum(atributos.values()) /40
 
